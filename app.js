@@ -20,11 +20,12 @@ var photoList = [
         id: "002",
         name: "photo002.jpg",
         type: "jpg",
-        dataUrl: "http://localhost:3000/data/photo000002.jpg"
+        dataUrl: "http://localhost:3000/data/photo999.jpg"
     }
 ]
 
 // 写真リストを取得するAPI
 app.get("/api/photo/list", function(req, res, next){
+    console.log("ssssss");
     res.json(photoList);
 });

@@ -2,7 +2,7 @@ services:
   app:
     container_name: frontend
     build: .
-    command: node app.js
+    command: npm run dev
     ports:
       - 4000:4000
     volumes:
