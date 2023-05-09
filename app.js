@@ -1,13 +1,22 @@
-/* 1. expressモジュールをロードし、インスタンス化してappに代入。*/
 var express = require("express");
+const cors = require('cors');
+const port = process.env.PORT || 3000;
+
 var app = express();
 
-/* 2. listen()メソッドを実行して3000番ポートで待ち受け。*/
-var server = app.listen(4000, function() {
+const corsOptions = {
+    origin: 'http://localhost:${port}', // 許可するドメイン
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // 許可する HTTP メソッド
+    allowedHeaders: ['Content-Type', 'Authorization'], // 許可するヘッダー
+    credentials: true, // クレデンシャル（Cookieなど）を許可する場合は true
+};
+
+app.use(cors(corsOptions));
+
+var server = app.listen(port, function() {
     console.log("Node.js is listening to PORT:" + server.address().port);
 });
 
-/* 3. 以後、アプリケーション固有の処理 */
 
 // 写真のサンプルデータ
 var photoList = [
@@ -26,6 +35,6 @@ var photoList = [
 
 // 写真リストを取得するAPI
 app.get("/api/photo/list", function(req, res, next){
-    console.log("ssssss");
+    console.log("484");
     res.json(photoList);
 });
