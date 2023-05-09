@@ -20,7 +20,7 @@ var photoList = [
         id: "002",
         name: "photo002.jpg",
         type: "jpg",
-        dataUrl: "http://localhost:3000/data/photo002.jpg"
+        dataUrl: "http://localhost:3000/data/photo000002.jpg"
     }
 ]
 
